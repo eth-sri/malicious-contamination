@@ -1,9 +1,9 @@
-# Adjusted from https://github.com/lm-sys/llm-decontaminator to check worst case scenario for the evador
 from .openai import OpenAIQuery
 import json
 import os
 import asyncio
 
+# prompts taken from https://arxiv.org/pdf/2311.04850.pdf
 code_instruct ="""I will now give you two programs. I will enclose the two questions with curly braces \{\}.
 Please help me determine if the following two programs address the same problem.
 Disregarding their implementation methods, please consider only their objectives, inputs, and outputs.
