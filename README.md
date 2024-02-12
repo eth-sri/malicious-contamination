@@ -18,7 +18,7 @@ python -m pip install -r requirements.txt
 
 ## Reproducing Results
 
-Before starting, you should either add your Openai API Key as an environment variable with the key OPENAI_API_KEY or create the [`scripts/.env`] file with the following content:
+Before starting, you should either add your Openai API Key as an environment variable with the key OPENAI_API_KEY or create the `scripts/.env` file with the following content:
 ```bash
 OPENAI_API_KEY=[YOUR API KEY]
 ```
@@ -31,6 +31,20 @@ bash scripts/main.sh
 
 Note that this can take several weeks to run on a single H100 Nvidia GPU, use a couple hundred USD with the OpenAI API and needs around 500GB of storage space. 
 
-We note that this code runs code that was copied from [this GitHub repo](https://github.com/swj0419/detect-pretrain-code-contamination) to implement the method by Shi for benchmark-level contamination. Changes that were made were documented with the a comment starting with `# NOTE`. All other methods were implemented in the [`src/contamination`](/src/contamination/) folder.
+We note that this repo contains a baseline copied from [this GitHub repo](https://github.com/swj0419/detect-pretrain-code-contamination) to implement the method by Shi for benchmark-level contamination in the [`code-contamination-detection`](code-contamination-detection) subfolder. Changes that were made were documented with the a comment starting with `# NOTE`.
 
 After this, a postprocessing notebook located at [`notebooks/postprocessing.ipynb`](notebooks/postprocessing.ipynb) can be run to get our final results.
+
+## Citation
+Please use the following citation to cite this repo or the associated paper:
+
+```
+@article{dekoninck2024evading,
+      title={Evading Data Contamination Detection for Language Models is (too) Easy}, 
+      author={Jasper Dekoninck and Mark Niklas Müller and Maximilian Baader and Marc Fischer and Martin Vechev},
+      year={2024},
+      eprint={2402.02823},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
